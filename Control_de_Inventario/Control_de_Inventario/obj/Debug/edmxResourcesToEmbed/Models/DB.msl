@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Control_de_InventarioModelStoreContainer" CdmEntityContainer="Control_de_InventarioEntities">
+    <EntitySetMapping Name="Articulo">
+      <EntityTypeMapping TypeName="Control_de_InventarioModel.Articulo">
+        <MappingFragment StoreEntitySet="Articulo">
+          <ScalarProperty Name="id_articulo" ColumnName="id_articulo" />
+          <ScalarProperty Name="art_nombre" ColumnName="art_nombre" />
+          <ScalarProperty Name="art_descripcion" ColumnName="art_descripcion" />
+          <ScalarProperty Name="art_precio_uni" ColumnName="art_precio_uni" />
+          <ScalarProperty Name="art_precio_mayor_1" ColumnName="art_precio_mayor_1" />
+          <ScalarProperty Name="art_precio_mayor_2" ColumnName="art_precio_mayor_2" />
+          <ScalarProperty Name="art_activo" ColumnName="art_activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Detalle_Venta">
+      <EntityTypeMapping TypeName="Control_de_InventarioModel.Detalle_Venta">
+        <MappingFragment StoreEntitySet="Detalle_Venta">
+          <ScalarProperty Name="deta_id_detalle_venta" ColumnName="deta_id_detalle_venta" />
+          <ScalarProperty Name="deta_id_articulo" ColumnName="deta_id_articulo" />
+          <ScalarProperty Name="deta_precio" ColumnName="deta_precio" />
+          <ScalarProperty Name="deta_cantidad" ColumnName="deta_cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entreda">
+      <EntityTypeMapping TypeName="Control_de_InventarioModel.Entreda">
+        <MappingFragment StoreEntitySet="Entreda">
+          <ScalarProperty Name="id_entrada" ColumnName="id_entrada" />
+          <ScalarProperty Name="ent_fecha" ColumnName="ent_fecha" />
+          <ScalarProperty Name="ent_usuario" ColumnName="ent_usuario" />
+          <ScalarProperty Name="ent_cantidad" ColumnName="ent_cantidad" />
+          <ScalarProperty Name="ent_articulo" ColumnName="ent_articulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventario">
+      <EntityTypeMapping TypeName="Control_de_InventarioModel.Inventario">
+        <MappingFragment StoreEntitySet="Inventario">
+          <ScalarProperty Name="id_inventario" ColumnName="id_inventario" />
+          <ScalarProperty Name="inv_articulo" ColumnName="inv_articulo" />
+          <ScalarProperty Name="inv_cantidad" ColumnName="inv_cantidad" />
+          <ScalarProperty Name="inv_cantidad_min" ColumnName="inv_cantidad_min" />
+          <ScalarProperty Name="inv_descripcion" ColumnName="inv_descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Perfil">
+      <EntityTypeMapping TypeName="Control_de_InventarioModel.Perfil">
+        <MappingFragment StoreEntitySet="Perfil">
+          <ScalarProperty Name="id_perfil" ColumnName="id_perfil" />
+          <ScalarProperty Name="per_perfil" ColumnName="per_perfil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Venta">
+      <EntityTypeMapping TypeName="Control_de_InventarioModel.Venta">
+        <MappingFragment StoreEntitySet="Venta">
+          <ScalarProperty Name="id_venta" ColumnName="id_venta" />
+          <ScalarProperty Name="ven_id_usuario" ColumnName="ven_id_usuario" />
+          <ScalarProperty Name="ven_fecha" ColumnName="ven_fecha" />
+          <ScalarProperty Name="ven_total" ColumnName="ven_total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spAgregarDetalleVenta" FunctionName="Control_de_InventarioModel.Store.spAgregarDetalleVenta" />
+    <FunctionImportMapping FunctionImportName="spAgregarVenta" FunctionName="Control_de_InventarioModel.Store.spAgregarVenta" />
+    <FunctionImportMapping FunctionImportName="spInventarioSalida" FunctionName="Control_de_InventarioModel.Store.spInventarioSalida" />
+    <EntitySetMapping Name="vwmostrarusuarios">
+      <EntityTypeMapping TypeName="Control_de_InventarioModel.vwmostrarusuarios">
+        <MappingFragment StoreEntitySet="vwmostrarusuarios">
+          <ScalarProperty Name="PERFIL" ColumnName="PERFIL" />
+          <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spEliminarUsuario" FunctionName="Control_de_InventarioModel.Store.spEliminarUsuario" />
+    <FunctionImportMapping FunctionImportName="spAgregarUsuario" FunctionName="Control_de_InventarioModel.Store.spAgregarUsuario" />
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="Control_de_InventarioModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="usu_activo" ColumnName="usu_activo" />
+          <ScalarProperty Name="usu_perfil" ColumnName="usu_perfil" />
+          <ScalarProperty Name="usu_password" ColumnName="usu_password" />
+          <ScalarProperty Name="usu_nombre" ColumnName="usu_nombre" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spEditarUsuario" FunctionName="Control_de_InventarioModel.Store.spEditarUsuario" />
+    <EntitySetMapping Name="vwmostrarinventario">
+      <EntityTypeMapping TypeName="Control_de_InventarioModel.vwmostrarinventario">
+        <MappingFragment StoreEntitySet="vwmostrarinventario">
+          <ScalarProperty Name="inv_cantidad" ColumnName="inv_cantidad" />
+          <ScalarProperty Name="art_nombre" ColumnName="art_nombre" />
+          <ScalarProperty Name="id_articulo" ColumnName="id_articulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwmostrararticulo">
+      <EntityTypeMapping TypeName="Control_de_InventarioModel.vwmostrararticulo">
+        <MappingFragment StoreEntitySet="vwmostrararticulo">
+          <ScalarProperty Name="art_precio_mayor_2" ColumnName="art_precio_mayor_2" />
+          <ScalarProperty Name="art_precio_mayor_1" ColumnName="art_precio_mayor_1" />
+          <ScalarProperty Name="art_precio_uni" ColumnName="art_precio_uni" />
+          <ScalarProperty Name="art_nombre" ColumnName="art_nombre" />
+          <ScalarProperty Name="id_articulo" ColumnName="id_articulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spEliminarArticulo" FunctionName="Control_de_InventarioModel.Store.spEliminarArticulo" />
+    <FunctionImportMapping FunctionImportName="spAgregarArticulo" FunctionName="Control_de_InventarioModel.Store.spAgregarArticulo" />
+    <FunctionImportMapping FunctionImportName="spEditarArticulo" FunctionName="Control_de_InventarioModel.Store.spEditarArticulo" />
+    <FunctionImportMapping FunctionImportName="spAgregarEntrada" FunctionName="Control_de_InventarioModel.Store.spAgregarEntrada" />
+    <EntitySetMapping Name="vwmostrarentrada">
+      <EntityTypeMapping TypeName="Control_de_InventarioModel.vwmostrarentrada">
+        <MappingFragment StoreEntitySet="vwmostrarentrada">
+          <ScalarProperty Name="inv_cantidad" ColumnName="inv_cantidad" />
+          <ScalarProperty Name="art_nombre" ColumnName="art_nombre" />
+          <ScalarProperty Name="id_articulo" ColumnName="id_articulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

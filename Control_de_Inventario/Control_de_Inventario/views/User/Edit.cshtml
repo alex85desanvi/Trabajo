@@ -1,0 +1,45 @@
+﻿@model Control_de_Inventario.Models.ViewModels.EditUserViewModel
+@{
+    ViewBag.Title = "Editar Usuario";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-md-12">
+
+        @using (Html.BeginForm("Edit", "User", FormMethod.Post, new { role = "form", @class = "" }))
+        {
+            //Se va a la peticion UserControler
+            @Html.HiddenFor(d=>d.Id)
+            //Seguridad
+            @Html.AntiForgeryToken()
+
+            //Si se encuentra un error se mostrara
+            @Html.ValidationMessage("error", new { @class = "text-danger" })
+
+            //Los atributos
+            @Html.LabelFor(d => d.Usuario)
+            @Html.TextBoxFor(d => d.Usuario, new { @class = "form-control" })
+            @Html.ValidationMessage("Usuario", new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(d => d.Password)
+            @Html.PasswordFor(d => d.Password, new { @class = "form-control" })
+            @Html.ValidationMessage("Password", new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(d => d.ConfirmPassword)
+            @Html.PasswordFor(d => d.ConfirmPassword, new { @class = "form-control" })
+            @Html.ValidationMessage("ConfirmPassword", new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(d => d.Perfil)
+            @Html.TextBoxFor(d => d.Perfil, new { @class = "form-control" })
+            @Html.ValidationMessage("Perfil", new { @class = "text-danger" })<br />
+
+            <div style="text-align:right;">
+                <input type="submit" class="btn-success" value="Guardar" />
+            </div>
+        }
+
+    </div>
+
+</div>

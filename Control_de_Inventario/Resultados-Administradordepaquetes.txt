@@ -1,0 +1,101 @@
+﻿Intentando recopilar información sobre dependencias para el paquete 'jQuery.UI.Combined.1.12.1' respecto al proyecto 'Control_de_Inventario', con el destino '.NETFramework,Version=v4.6'
+Intentando resolver las dependencias para el paquete 'jQuery.UI.Combined.1.12.1' con DependencyBehavior 'Lowest'
+Resolviendo acciones para instalar el paquete 'jQuery.UI.Combined.1.12.1'
+Se resolvieron las acciones para instalar el paquete 'jQuery.UI.Combined.1.12.1'
+Para agregar el paquete 'jQuery.UI.Combined.1.12.1' al proyecto 'Control_de_Inventario' con el destino 'net46'.
+Para agregar el paquete 'jQuery.UI.Combined.1.12.1' al proyecto 'Control_de_Inventario' con el destino 'net46'.
+Agregando el paquete 'jQuery.UI.Combined.1.12.1' a la carpeta 'C:\Control_de_Inventario\Control_de_Inventario\packages'
+El paquete 'jQuery.UI.Combined.1.12.1' se agregó a la carpeta 'C:\Control_de_Inventario\Control_de_Inventario\packages'
+El archivo 'jquery-ui-1.12.1.min.js' se agregó a la carpeta 'Scripts'.
+El archivo 'Scripts\jquery-ui-1.12.1.min.js' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'jquery-ui-1.12.1.js' se agregó a la carpeta 'Scripts'.
+El archivo 'Scripts\jquery-ui-1.12.1.js' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'tooltip.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\tooltip.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'theme.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\theme.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'tabs.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\tabs.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'spinner.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\spinner.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'sortable.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\sortable.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'slider.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\slider.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'selectmenu.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\selectmenu.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'selectable.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\selectable.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'resizable.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\resizable.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'progressbar.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\progressbar.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'menu.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\menu.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'jquery-ui.min.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\jquery-ui.min.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'jquery-ui.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\jquery-ui.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-icons_ffffff_256x240.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-icons_ffffff_256x240.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-icons_cd0a0a_256x240.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-icons_cd0a0a_256x240.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-icons_cc0000_256x240.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-icons_cc0000_256x240.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-icons_888888_256x240.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-icons_888888_256x240.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-icons_777777_256x240.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-icons_777777_256x240.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-icons_777620_256x240.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-icons_777620_256x240.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-icons_555555_256x240.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-icons_555555_256x240.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-icons_454545_256x240.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-icons_454545_256x240.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-icons_444444_256x240.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-icons_444444_256x240.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-icons_2e83ff_256x240.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-icons_2e83ff_256x240.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-icons_222222_256x240.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-icons_222222_256x240.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-bg_highlight-soft_75_cccccc_1x100.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-bg_glass_95_fef1ec_1x400.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-bg_glass_75_e6e6e6_1x400.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-bg_glass_75_dadada_1x400.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-bg_glass_65_ffffff_1x400.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-bg_glass_55_fbf9ee_1x400.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-bg_flat_75_ffffff_40x100.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'ui-bg_flat_0_aaaaaa_40x100.png' se agregó a la carpeta 'Content\themes\base\images'.
+El archivo 'Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'draggable.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\draggable.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'dialog.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\dialog.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'datepicker.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\datepicker.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'core.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\core.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'button.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\button.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'base.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\base.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'autocomplete.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\autocomplete.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'all.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\all.css' se agregó al proyecto 'Control_de_Inventario'.
+El archivo 'accordion.css' se agregó a la carpeta 'Content\themes\base'.
+El archivo 'Content\themes\base\accordion.css' se agregó al proyecto 'Control_de_Inventario'.
+El paquete 'jQuery.UI.Combined.1.12.1' se agregó a 'packages.config'
+Para agregar el paquete 'jQuery.UI.Combined.1.12.1' al proyecto 'Control_de_Inventario' con el destino 'net46'.
+Ejecutando archivo de script 'C:\Control_de_Inventario\Control_de_Inventario\packages\jQuery.UI.Combined.1.12.1\Tools\install.ps1'...
+True
+'jQuery.UI.Combined 1.12.1' se instaló correctamente en Control_de_Inventario
+Se agregó el archivo 'web.config'.
+========== Finalizado ==========

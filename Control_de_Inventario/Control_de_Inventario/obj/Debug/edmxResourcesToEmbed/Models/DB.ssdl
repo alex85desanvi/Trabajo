@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Control_de_InventarioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Articulo">
+    <Key>
+      <PropertyRef Name="id_articulo" />
+    </Key>
+    <Property Name="id_articulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="art_nombre" Type="varchar" MaxLength="50" />
+    <Property Name="art_descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="art_precio_uni" Type="money" />
+    <Property Name="art_precio_mayor_1" Type="money" />
+    <Property Name="art_precio_mayor_2" Type="money" />
+    <Property Name="art_activo" Type="bit" />
+  </EntityType>
+  <EntityType Name="Detalle_Venta">
+    <Key>
+      <PropertyRef Name="deta_id_detalle_venta" />
+      <PropertyRef Name="deta_id_articulo" />
+    </Key>
+    <Property Name="deta_id_detalle_venta" Type="int" Nullable="false" />
+    <Property Name="deta_id_articulo" Type="int" Nullable="false" />
+    <Property Name="deta_precio" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="deta_cantidad" Type="int" />
+  </EntityType>
+  <EntityType Name="Entreda">
+    <Key>
+      <PropertyRef Name="id_entrada" />
+    </Key>
+    <Property Name="id_entrada" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ent_fecha" Type="date" />
+    <Property Name="ent_usuario" Type="int" />
+    <Property Name="ent_cantidad" Type="int" />
+    <Property Name="ent_articulo" Type="int" />
+  </EntityType>
+  <EntityType Name="Inventario">
+    <Key>
+      <PropertyRef Name="id_inventario" />
+    </Key>
+    <Property Name="id_inventario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="inv_articulo" Type="int" />
+    <Property Name="inv_cantidad" Type="int" />
+    <Property Name="inv_cantidad_min" Type="int" />
+    <Property Name="inv_descripcion" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Perfil">
+    <Key>
+      <PropertyRef Name="id_perfil" />
+    </Key>
+    <Property Name="id_perfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="per_perfil" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usu_nombre" Type="varchar" MaxLength="30" />
+    <Property Name="usu_password" Type="varchar" MaxLength="30" />
+    <Property Name="usu_perfil" Type="int" />
+    <Property Name="usu_activo" Type="bit" />
+  </EntityType>
+  <EntityType Name="Venta">
+    <Key>
+      <PropertyRef Name="id_venta" />
+    </Key>
+    <Property Name="id_venta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ven_id_usuario" Type="int" />
+    <Property Name="ven_fecha" Type="date" />
+    <Property Name="ven_total" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Control_de_Inventario.dbo.vwmostrararticulo' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vwmostrararticulo">
+    <Key>
+      <PropertyRef Name="id_articulo" />
+    </Key>
+    <Property Name="id_articulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="art_nombre" Type="varchar" MaxLength="50" />
+    <Property Name="art_precio_uni" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="art_precio_mayor_1" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="art_precio_mayor_2" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Control_de_Inventario.dbo.vwmostrarentrada' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vwmostrarentrada">
+    <Key>
+      <PropertyRef Name="id_articulo" />
+    </Key>
+    <Property Name="id_articulo" Type="int" Nullable="false" />
+    <Property Name="art_nombre" Type="varchar" MaxLength="50" />
+    <Property Name="inv_cantidad" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Control_de_Inventario.dbo.vwmostrarinventario' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vwmostrarinventario">
+    <Key>
+      <PropertyRef Name="id_articulo" />
+    </Key>
+    <Property Name="id_articulo" Type="int" Nullable="false" />
+    <Property Name="art_nombre" Type="varchar" MaxLength="50" />
+    <Property Name="inv_cantidad" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Control_de_Inventario.dbo.vwmostrarusuarios' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vwmostrarusuarios">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="USUARIO" Type="varchar" MaxLength="30" />
+    <Property Name="PERFIL" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <Association Name="FK__Detalle_V__deta___267ABA7A">
+    <End Role="Venta" Type="Self.Venta" Multiplicity="1" />
+    <End Role="Detalle_Venta" Type="Self.Detalle_Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Venta">
+        <PropertyRef Name="id_venta" />
+      </Principal>
+      <Dependent Role="Detalle_Venta">
+        <PropertyRef Name="deta_id_detalle_venta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Detalle_V__deta___276EDEB3">
+    <End Role="Articulo" Type="Self.Articulo" Multiplicity="1" />
+    <End Role="Detalle_Venta" Type="Self.Detalle_Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articulo">
+        <PropertyRef Name="id_articulo" />
+      </Principal>
+      <Dependent Role="Detalle_Venta">
+        <PropertyRef Name="deta_id_articulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Entreda__ent_art__286302EC">
+    <End Role="Articulo" Type="Self.Articulo" Multiplicity="0..1" />
+    <End Role="Entreda" Type="Self.Entreda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articulo">
+        <PropertyRef Name="id_articulo" />
+      </Principal>
+      <Dependent Role="Entreda">
+        <PropertyRef Name="ent_articulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Entreda__ent_usu__29572725">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Entreda" Type="Self.Entreda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Entreda">
+        <PropertyRef Name="ent_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Inventari__inv_a__2A4B4B5E">
+    <End Role="Articulo" Type="Self.Articulo" Multiplicity="0..1" />
+    <End Role="Inventario" Type="Self.Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articulo">
+        <PropertyRef Name="id_articulo" />
+      </Principal>
+      <Dependent Role="Inventario">
+        <PropertyRef Name="inv_articulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Usuario__usu_per__2B3F6F97">
+    <End Role="Perfil" Type="Self.Perfil" Multiplicity="0..1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfil">
+        <PropertyRef Name="id_perfil" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="usu_perfil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Venta__ven_id_us__2C3393D0">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Venta">
+        <PropertyRef Name="ven_id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="spAgregarArticulo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="art_nombre" Type="varchar" Mode="In" />
+    <Parameter Name="art_descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="art_precio_uni" Type="money" Mode="In" />
+    <Parameter Name="art_precio_mayor_1" Type="money" Mode="In" />
+    <Parameter Name="art_precio_mayor_2" Type="money" Mode="In" />
+  </Function>
+  <Function Name="spAgregarDetalleVenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="deta_id_detalle_venta" Type="int" Mode="In" />
+    <Parameter Name="deta_id_articulo" Type="int" Mode="In" />
+    <Parameter Name="deta_precio_uni" Type="decimal" Mode="In" />
+    <Parameter Name="deta_cantidad" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spAgregarEntrada" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ent_usuario" Type="int" Mode="In" />
+    <Parameter Name="ent_cantidad" Type="int" Mode="In" />
+    <Parameter Name="ent_articulo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spAgregarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usu_nombre" Type="varchar" Mode="In" />
+    <Parameter Name="usu_password" Type="varchar" Mode="In" />
+    <Parameter Name="usu_perfil" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spAgregarVenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ven_id_usuario" Type="int" Mode="In" />
+    <Parameter Name="ven_total" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="spEditarArticulo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_articulo" Type="int" Mode="In" />
+    <Parameter Name="art_nombre" Type="varchar" Mode="In" />
+    <Parameter Name="art_descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="art_precio_uni" Type="money" Mode="In" />
+    <Parameter Name="art_precio_mayor_1" Type="money" Mode="In" />
+    <Parameter Name="art_precio_mayor_2" Type="money" Mode="In" />
+  </Function>
+  <Function Name="spEditarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_usuario" Type="int" Mode="In" />
+    <Parameter Name="usu_nombre" Type="varchar" Mode="In" />
+    <Parameter Name="usu_password" Type="varchar" Mode="In" />
+    <Parameter Name="usu_perfil" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spEliminarArticulo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_articulo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spEliminarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_usuario" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spInventarioSalida" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inv_articulo" Type="int" Mode="In" />
+    <Parameter Name="inv_descontar_cantidad" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="Control_de_InventarioModelStoreContainer">
+    <EntitySet Name="Articulo" EntityType="Self.Articulo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Detalle_Venta" EntityType="Self.Detalle_Venta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Entreda" EntityType="Self.Entreda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventario" EntityType="Self.Inventario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Perfil" EntityType="Self.Perfil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Venta" EntityType="Self.Venta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vwmostrararticulo" EntityType="Self.vwmostrararticulo" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwmostrararticulo].[id_articulo] AS [id_articulo], 
+    [vwmostrararticulo].[art_nombre] AS [art_nombre], 
+    [vwmostrararticulo].[art_precio_uni] AS [art_precio_uni], 
+    [vwmostrararticulo].[art_precio_mayor_1] AS [art_precio_mayor_1], 
+    [vwmostrararticulo].[art_precio_mayor_2] AS [art_precio_mayor_2]
+    FROM [dbo].[vwmostrararticulo] AS [vwmostrararticulo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwmostrarentrada" EntityType="Self.vwmostrarentrada" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwmostrarentrada].[id_articulo] AS [id_articulo], 
+    [vwmostrarentrada].[art_nombre] AS [art_nombre], 
+    [vwmostrarentrada].[inv_cantidad] AS [inv_cantidad]
+    FROM [dbo].[vwmostrarentrada] AS [vwmostrarentrada]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwmostrarinventario" EntityType="Self.vwmostrarinventario" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwmostrarinventario].[id_articulo] AS [id_articulo], 
+    [vwmostrarinventario].[art_nombre] AS [art_nombre], 
+    [vwmostrarinventario].[inv_cantidad] AS [inv_cantidad]
+    FROM [dbo].[vwmostrarinventario] AS [vwmostrarinventario]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwmostrarusuarios" EntityType="Self.vwmostrarusuarios" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwmostrarusuarios].[ID] AS [ID], 
+    [vwmostrarusuarios].[USUARIO] AS [USUARIO], 
+    [vwmostrarusuarios].[PERFIL] AS [PERFIL]
+    FROM [dbo].[vwmostrarusuarios] AS [vwmostrarusuarios]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Detalle_V__deta___267ABA7A" Association="Self.FK__Detalle_V__deta___267ABA7A">
+      <End Role="Venta" EntitySet="Venta" />
+      <End Role="Detalle_Venta" EntitySet="Detalle_Venta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Detalle_V__deta___276EDEB3" Association="Self.FK__Detalle_V__deta___276EDEB3">
+      <End Role="Articulo" EntitySet="Articulo" />
+      <End Role="Detalle_Venta" EntitySet="Detalle_Venta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Entreda__ent_art__286302EC" Association="Self.FK__Entreda__ent_art__286302EC">
+      <End Role="Articulo" EntitySet="Articulo" />
+      <End Role="Entreda" EntitySet="Entreda" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Entreda__ent_usu__29572725" Association="Self.FK__Entreda__ent_usu__29572725">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Entreda" EntitySet="Entreda" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Inventari__inv_a__2A4B4B5E" Association="Self.FK__Inventari__inv_a__2A4B4B5E">
+      <End Role="Articulo" EntitySet="Articulo" />
+      <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Usuario__usu_per__2B3F6F97" Association="Self.FK__Usuario__usu_per__2B3F6F97">
+      <End Role="Perfil" EntitySet="Perfil" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Venta__ven_id_us__2C3393D0" Association="Self.FK__Venta__ven_id_us__2C3393D0">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Venta" EntitySet="Venta" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

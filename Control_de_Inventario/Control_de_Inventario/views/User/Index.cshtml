@@ -1,0 +1,37 @@
+﻿@model List<Control_de_Inventario.Models.TableViewModels.UserTableViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Usuarios</h2>
+<div class="row">
+    <div class="col-md-12">
+        <input type="button" class="btn btn-primary" onclick="document.location.href='@Url.Content("~/User/Add")'" value="Nuevo"/>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-lg-12">
+        <table class="table table-bordered">
+            <tr>
+                <th>#</th>
+                <th>Usuario</th>
+                <th>Perfil</th>
+            </tr>
+
+            @foreach (var oElemento in Model)
+            {
+            <tr>
+                 <td>@oElemento.id</td>
+                 <td>@oElemento.usuario</td>
+                 <td>@oElemento.perfil</td>
+                <td>
+                    @*<input onclick="jsDelete(@oElemento.id)" type="button" value="Eliminar" class="btn btn-danger" />*@
+                    <input onclick="document.location.href='@Url.Content("~/User/Delete/" + oElemento.id)'" type="button" value="Eliminar" class="btn btn-danger" />
+                    <input onclick="document.location.href='@Url.Content("~/User/Edit/" + oElemento.id)'" type="button" value="Editar" class="btn btn-default" />
+                </td>
+            </tr>
+            }
+        </table>
+    </div>
+</div>

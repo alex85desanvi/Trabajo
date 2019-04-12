@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    //INICIA EL NUEVO LAYOUT CREADO LOGIN
+    Layout = "~/Views/Shared/_Layoutlogin.cshtml";
+}
+<br /><br />
+<br /><br />
+<div class="row">
+    <form id="frm">
+        <div class="col-lg-6 col-lg-offset-3">
+            Usuario
+            <input type="text" name="user" />
+            Password
+            <input type="password" name="password" />
+            <input type="submit" class="btn btn-success" value="Enter" />
+        </div>
+    </form>
+</div>
+
+@section scripts{
+    <script>
+    $(document).ready(function() {
+        $("#frm").submit(function (e) {
+            e.preventDefault();
+
+            url = "@Url.Content("~/Access/Enter")"
+            parametros = $(this).serialize();
+
+            $.post(url, parametros, function (data) {
+
+                if (data == "1") {
+                    document.location.href = "@Url.Content("~/")";
+                }
+                else {
+                    alert(data)
+                    document.location.href = "@Url.Content("~/Access/Index")"
+                }
+
+            })
+        })
+    })
+    </script>
+}
+
+

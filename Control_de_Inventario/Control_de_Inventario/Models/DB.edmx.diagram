@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5d00a8594a464ef286a7f7925fa19b07" Name="Diagram1">
+        <EntityTypeShape EntityType="Control_de_InventarioModel.Articulo" Width="1.5" PointX="4.625" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Control_de_InventarioModel.Detalle_Venta" Width="1.5" PointX="7.375" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Control_de_InventarioModel.Entreda" Width="1.5" PointX="0.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Control_de_InventarioModel.Inventario" Width="1.5" PointX="0.5" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Control_de_InventarioModel.Perfil" Width="1.5" PointX="0.5" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Control_de_InventarioModel.Venta" Width="1.5" PointX="7.25" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="Control_de_InventarioModel.FK__Detalle_V__deta___3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="Control_de_InventarioModel.FK__Entreda__ent_art__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="Control_de_InventarioModel.FK__Inventari__inv_a__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="Control_de_InventarioModel.FK__Detalle_V__deta___3A81B327" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Control_de_InventarioModel.vwmostrarusuarios" Width="1.5" PointX="9.5" PointY="1.875" />
+        <EntityTypeShape EntityType="Control_de_InventarioModel.Usuario" Width="1.5" PointX="4.5" PointY="1.25" />
+        <AssociationConnector Association="Control_de_InventarioModel.FK__Entreda__ent_usu__29572725" />
+        <AssociationConnector Association="Control_de_InventarioModel.FK__Usuario__usu_per__2B3F6F97" />
+        <AssociationConnector Association="Control_de_InventarioModel.FK__Venta__ven_id_us__2C3393D0" />
+        <EntityTypeShape EntityType="Control_de_InventarioModel.vwmostrarinventario" Width="1.5" PointX="9.75" PointY="6" />
+        <EntityTypeShape EntityType="Control_de_InventarioModel.vwmostrararticulo" Width="1.5" PointX="9.625" PointY="3.75" />
+        <EntityTypeShape EntityType="Control_de_InventarioModel.vwmostrarentrada" Width="1.5" PointX="12" PointY="6" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
