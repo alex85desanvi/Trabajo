@@ -1,2 +1,0 @@
-# Trabajo
-Control de inventario
