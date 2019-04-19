@@ -28,6 +28,8 @@
         <EntityTypeShape EntityType="Control_de_InventarioModel.Articulo" Width="1.5" PointX="7.625" PointY="0.875" />
         <EntityTypeShape EntityType="Control_de_InventarioModel.Detalle_Venta" Width="1.5" PointX="5.375" PointY="2.125" />
         <AssociationConnector Association="Control_de_InventarioModel.FK__Detalle_V__deta___3B75D760" />
+        <EntityTypeShape EntityType="Control_de_InventarioModel.Venta" Width="1.5" PointX="0.875" PointY="3.125" />
+        <AssociationConnector Association="Control_de_InventarioModel.FK__Detalle_V__deta___3A81B327" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
