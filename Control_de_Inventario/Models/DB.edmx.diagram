@@ -24,6 +24,11 @@
         <EntityTypeShape EntityType="Control_de_InventarioModel.vwmostrararticulo" Width="1.5" PointX="9.625" PointY="3.75" />
         <EntityTypeShape EntityType="Control_de_InventarioModel.vwmostrarentrada" Width="1.5" PointX="12" PointY="6" />
       </Diagram>
+      <Diagram DiagramId="76248972d61149c28d5eb694a374d515" Name="prueba" >
+        <EntityTypeShape EntityType="Control_de_InventarioModel.Articulo" Width="1.5" PointX="7.625" PointY="0.875" />
+        <EntityTypeShape EntityType="Control_de_InventarioModel.Detalle_Venta" Width="1.5" PointX="5.375" PointY="2.125" />
+        <AssociationConnector Association="Control_de_InventarioModel.FK__Detalle_V__deta___3B75D760" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
