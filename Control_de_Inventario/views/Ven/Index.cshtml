@@ -215,6 +215,9 @@
             });
             //TODO: implementar indicador de carga
             $.post("@Url.Action("GuardarVenta", "Ventas")", { items: registros }).done(function () {
+
+                location.reload();
+                
                 //TODO: mostrar mensaje de guardado exitoso
             }).fail(function () {
                 //TODO: mostrar mensaje de error en guardado
