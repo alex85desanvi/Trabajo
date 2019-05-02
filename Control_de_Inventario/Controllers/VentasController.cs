@@ -4,7 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+<<<<<<< HEAD
+=======
 using Control_de_Inventario.Models;
+>>>>>>> 494e6a934b76ad42e4b6ca7377c931b312f203b4
 
 namespace Control_de_Inventario.Controllers
 {
@@ -14,6 +17,8 @@ namespace Control_de_Inventario.Controllers
         public JsonResult GuardarVenta(List<ItemVentaViewModel> items)
         {
             //TODO: implementar guardado de la venta
+<<<<<<< HEAD
+=======
             using (Control_de_InventarioEntities db = new Control_de_InventarioEntities())
             {
                 decimal Total = 0;
@@ -52,6 +57,7 @@ namespace Control_de_Inventario.Controllers
 
 
             }
+>>>>>>> 494e6a934b76ad42e4b6ca7377c931b312f203b4
             return Json(new { });
         }
     }
