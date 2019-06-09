@@ -47,9 +47,9 @@ namespace Control_de_Inventario.Controllers
             using (Control_de_InventarioEntities db = new Control_de_InventarioEntities())
             {
 
-                var oUser = (Usuario)System.Web.HttpContext.Current.Session["Usuario"];
+                var usuario = (Session["Usuario"] as Usuario)?.id_usuario;
 
-                db.spAgregarEntrada(oUser.id_usuario, art.inv_cantidad, art.id_articulo);
+                db.spAgregarEntrada(usuario, art.inv_cantidad, art.id_articulo);
 
                 return Json(new { success = true, message = "Saved Successfully" }, JsonRequestBehavior.AllowGet);
             }

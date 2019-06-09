@@ -33,8 +33,8 @@ namespace Control_de_Inventario.Controllers
 
                     Total = SubTotal + Total;
                 }
-                
-                db.spAgregarVenta(1, Total);
+                var usuario = (Session["Usuario"] as Usuario)?.id_usuario;
+                db.spAgregarVenta(usuario, Total);
 
                 var idVenta = db.Venta.Max(x => (int?)x.id_venta) ?? 0;
 
