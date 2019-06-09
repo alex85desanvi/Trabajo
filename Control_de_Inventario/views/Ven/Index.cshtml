@@ -51,6 +51,8 @@
                         <th>#</th>
                         <th>Nombre</th>
                         <th>Precio Unitario</th>
+                        <th>Precio May A</th>
+                        <th>Precio May B</th>
                         <th>Cantidad</th>
                         <th>SubTotal</th>
                         <th class="hidden-print"></th>
@@ -151,12 +153,20 @@
                 dataTable.columns.adjust().draw();
             });
 
-            $("#tablaproductosVenta").on("keyup mouseup", "input", function () {
-                if ($(this).attr("name") == "total")
+            $("#tablaproductosVenta").on("keyup mouseup", "input[type=number]", function () {
+                if ($(this).attr("name") != "cantidad")
                     return;
                 var cantidad = parseFloat($(this).val() || "0");
-                var precio = parseFloat($(this).closest("tr").find("td").eq(2).text());
-                $(this).closest("tr").find("input[name=total]").val(cantidad * precio);
+                //var precio = parseFloat($(this).closest("tr").find("td").eq(2).text());
+                var precio = parseFloat($(this).closest("tr").find("input[type=radio]:checked").val());
+                //$(this).closest("tr").find("input[type=radio]:checked").val()
+                $(this).closest("tr").find("input[name=total]").val((cantidad * precio).toFixed(2));
+                actualizaResumen();
+            });
+            $("#tablaproductosVenta").on("click", "input[type=radio]", function () {
+                var cantidad = parseFloat($(this).closest("tr").find("input[name=cantidad]").val() || "0");
+                var precio = parseFloat($(this).closest("tr").find("input[type=radio]:checked").val());
+                $(this).closest("tr").find("input[name=total]").val((cantidad * precio).toFixed(2));
                 actualizaResumen();
             });
 
@@ -167,6 +177,8 @@
                 id: $row.find("td").eq(0).text(),
                 nombre: $row.find("td").eq(1).text(),
                 precio: $row.find("td").eq(2).text(),
+                mayoristaA: $row.find("td").eq(3).text() || "0",
+                mayoristaB: $row.find("td").eq(4).text() || "0",
                 cantidad: $($row.find("td input").eq(0)).val() || "0"
             };
             agregarRegistroEnTabla(datos);
@@ -177,8 +189,8 @@
             var $tr = $("<tr>");
             var $id = $("<td>", { html: datos.id });
             var $nombre = $("<td>", { html: datos.nombre });
-            var $precio = $("<td>", { html: datos.precio });
-            var $inputCantidad = $("<input>", { type: "number", value: datos.cantidad, "class": "form-control", name: "cantidad" });
+            var $precio = $("<td>", { html: datos.precio }).append("<br>").append($("<input>", { type: "radio", name: "selector" + datos.id, checked: "checked", value: parseFloat(datos.precio).toFixed(2) }));
+            var $inputCantidad = $("<input>", { type: "number", value: datos.cantidad || "0", "class": "form-control", name: "cantidad" });
             var $cantidad = $("<td>").append($inputCantidad);
             var $inputTotal = $("<input>", { type: "number", value: (parseFloat(datos.precio) * parseFloat(datos.cantidad)).toFixed(2), "class": "form-control", name: "total", readonly: "readonly" });
             var $total = $("<td>").append($inputTotal);
@@ -186,6 +198,8 @@
             $tr.append($id);
             $tr.append($nombre);
             $tr.append($precio);
+            $tr.append($("<td>", { html: datos.mayoristaA }).append("<br>").append($("<input>", { type: "radio", name: "selector" + datos.id, value: parseFloat(datos.mayoristaA).toFixed(2) })));
+            $tr.append($("<td>", { html: datos.mayoristaB }).append("<br>").append($("<input>", { type: "radio", name: "selector" + datos.id, value: parseFloat(datos.mayoristaB).toFixed(2) })));
             $tr.append($cantidad);
             $tr.append($total);
             $tr.append($quitarRegistro);
@@ -198,7 +212,7 @@
         }
         function actualizaResumen() {
             var resumen = 0;
-            $("#tablaproductosVenta").find("input[name=total]").each(function () {
+            $("#tablaproductosVenta").find("input[name=total]").each(function () {;
                 resumen += parseFloat($(this).val());
             });
             $("#totalVentaResumen").text(resumen.toFixed(2));
