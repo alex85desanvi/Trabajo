@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -23,7 +24,13 @@ namespace Control_de_Inventario.Controllers
         {
             using (Control_de_InventarioEntities db = new Control_de_InventarioEntities())
             {
-                List<vwmostrararticulo> empList = db.vwmostrararticulo.ToList<vwmostrararticulo>();
+                var empList = db.vwmostrararticulo.ToList().Select(x => new {
+                    x.art_nombre,
+                    art_precio_mayor_1 = (x.art_precio_mayor_1 ?? 0m).ToString("F", CultureInfo.CreateSpecificCulture("es-AR")),
+                    art_precio_mayor_2 = (x.art_precio_mayor_2 ?? 0m).ToString("F", CultureInfo.CreateSpecificCulture("es-AR")),
+                    art_precio_uni = (x.art_precio_uni ?? 0m).ToString("F", CultureInfo.CreateSpecificCulture("es-AR")),
+                    x.id_articulo
+                }).ToList();
                 return Json(new { data = empList }, JsonRequestBehavior.AllowGet);
             }
         }
