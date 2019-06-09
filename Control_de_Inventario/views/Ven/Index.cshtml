@@ -180,7 +180,7 @@
             var $precio = $("<td>", { html: datos.precio });
             var $inputCantidad = $("<input>", { type: "number", value: datos.cantidad, "class": "form-control", name: "cantidad" });
             var $cantidad = $("<td>").append($inputCantidad);
-            var $inputTotal = $("<input>", { type: "number", value: parseFloat(datos.precio) * parseFloat(datos.cantidad), "class": "form-control", name: "total", readonly: "readonly" });
+            var $inputTotal = $("<input>", { type: "number", value: (parseFloat(datos.precio) * parseFloat(datos.cantidad)).toFixed(2), "class": "form-control", name: "total", readonly: "readonly" });
             var $total = $("<td>").append($inputTotal);
             var $quitarRegistro = $("<td class='hidden-print'><button onclick='quitarItemProductoTablaVenta(this)' class='form-control btn btn-danger'>Quitar</button></td>");
             $tr.append($id);
@@ -194,13 +194,14 @@
         }
         function quitarItemProductoTablaVenta(elemento) {
             $(elemento).closest("tr").remove();
+            actualizaResumen();
         }
         function actualizaResumen() {
             var resumen = 0;
             $("#tablaproductosVenta").find("input[name=total]").each(function () {
                 resumen += parseFloat($(this).val());
             });
-            $("#totalVentaResumen").text(resumen);
+            $("#totalVentaResumen").text(resumen.toFixed(2));
         }
         function enviarTotalesVentaAlServidor() {
             var registros = [];
