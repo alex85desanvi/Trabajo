@@ -6,7 +6,7 @@ use Control_de_Inventario
 
 create table Articulo(
 id_articulo int identity (1,1),
-art_nombre varchar (50),
+art_nombre varchar (100),
 art_descripcion varchar (100),
 art_precio_uni decimal (10,2),
 art_precio_mayor_1 decimal (10,2),
