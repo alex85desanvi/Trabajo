@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Control_de_Inventario.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,16 @@ namespace Control_de_Inventario.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(DateTime? fecha = null)
         {
+            var filtro = fecha.HasValue ? fecha.Value : DateTime.Now.Date;
+
+            using(var context = new Control_de_InventarioEntities())
+            {
+                var sumatoria = context.Venta.Where(x => x.ven_fecha >= filtro && x.ven_fecha <= filtro).Sum(x => x.ven_total) ?? 0m;
+                ViewBag.ventaTotal = sumatoria;
+            }
+
             return View();
         }
 

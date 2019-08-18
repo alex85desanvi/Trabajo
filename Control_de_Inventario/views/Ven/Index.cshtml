@@ -81,8 +81,8 @@
 <div class="row">
     <div class="col-xs-12">
         <button class="btn btn-danger" onclick="location.reload()">Cancelar</button>
-        <button class="btn btn-success" id="guardarVenta" onclick="enviarTotalesVentaAlServidor()">Guardar</button>
-        <button class="btn btn-info" onclick="$('#contenedorVenta').printThis();">Imprimir</button>
+        <button class="btn btn-success" id="guardarVenta" onclick="enviarTotalesVentaAlServidor()">Impriir</button>
+        <button class="btn btn-info" onclick="location.reload();" id="botonNuevo">Nuevo</button>
     </div>
 </div>
 
@@ -218,6 +218,7 @@
             $("#totalVentaResumen").text(resumen.toFixed(2));
         }
         function enviarTotalesVentaAlServidor() {
+            $('#contenedorVenta').printThis();
             var registros = [];
             $("#tablaproductosVenta").find("tr").each(function () {
                 var r = {
@@ -230,9 +231,8 @@
             });
             //TODO: implementar indicador de carga
             $.post("@Url.Action("GuardarVenta", "Ventas")", { items: registros }).done(function () {
-
-                location.reload();
-                
+                alert("La venta se concreto existosamente");
+                $("#guardarVenta").hide();
                 //TODO: mostrar mensaje de guardado exitoso
             }).fail(function () {
                 //TODO: mostrar mensaje de error en guardado

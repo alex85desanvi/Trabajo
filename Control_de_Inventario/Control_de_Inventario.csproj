@@ -420,6 +420,7 @@
     <Content Include="Views\Ent\AddStock.cshtml" />
     <Content Include="Views\Inv\Index.cshtml" />
     <Content Include="Views\Ven\Index.cshtml" />
+    <Content Include="Views\Mensajes\SinPermisos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

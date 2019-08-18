@@ -15,6 +15,11 @@ namespace Control_de_Inventario.Controllers
         // GET: Ent
         public ActionResult Index()
         {
+            var oUser = (Usuario)Session["Usuario"];
+            if (oUser?.usu_perfil == 3)//3 = usuario cajero
+            {
+                return View("~/Views/Mensajes/SinPermisos.cshtml");
+            }
             return View();
         }
 
